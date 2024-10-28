@@ -1,0 +1,65 @@
+%h1 New Post
+
+-# Inline CSS styles (optional, for demonstration)
+:css
+  .post-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+= form_with(model: @post, local: true, class: "post-form") do |form|
+  .form-group
+    = form.label :title, class: "form-label"
+    = form.text_field :title, class: "form-control"
+  .form-group
+    = form.label :content, class: "form-label"
+    = form.text_area :content, class: "form-control", rows: 5
+  .form-group
+    = form.label :author, class: "form-label"
+    = form.text_field :author, class: "form-control"
+  .form-group
+    = form.label :published_at, class: "form-label"
+    = form.datetime_select :published_at, class: "form-control"
+  .form-group
+    = form.label :views, class: "form-label"
+    = form.number_field :views, class: "form-control"
+  .form-group
+    = form.submit "Create Post", class: "btn btn-primary"

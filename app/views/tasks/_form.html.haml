@@ -1,0 +1,26 @@
+= form_with(model: task, local: true) do |form|
+  %div{:style => "text-align: center; margin-bottom: 20px;"}
+    %img{:src => "path/to/your/image.jpg", :alt => "Task Image", :style => "max-width: 100%; height: auto;"}
+
+  - if task.errors.any?
+    %div{:style => "color: red; text-align: center;"}
+      %h2= pluralize(task.errors.count, "error")
+      prohibited this task from being saved:
+      %ul
+        - task.errors.each do |error|
+          %li= error.full_message
+
+  %div{:style => "margin-bottom: 15px;"}
+    = form.label :title, style: "display: block; font-weight: bold; font-size: 16px;"
+    = form.text_field :title, style: "width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;"
+
+  %div{:style => "margin-bottom: 15px;"}
+    = form.label :content, style: "display: block; font-weight: bold; font-size: 16px;"
+    = form.text_area :content, style: "width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; height: 100px;"
+
+  %div{:style => "margin-bottom: 15px;"}
+    = form.label :status, style: "display: block; font-weight: bold; font-size: 16px;"
+    = form.select :status, options_for_select(Task.statuses.keys), {}, style: "width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;"
+
+  %div{:style => "text-align: center;"}
+    = form.submit "Save Task", style: "padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;"

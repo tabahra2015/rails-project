@@ -1,0 +1,40 @@
+%h1= @post.title
+%p.post-content= @post.content
+
+%h2 Comments
+= link_to "Add Comment", new_post_comment_path(@post), class: "btn btn-primary"
+
+- if @post.comments.any?
+  .comments
+    - @post.comments.each do |comment|
+      .comment
+        %p.comment-content= comment.content
+- else
+  %p No comments yet.
+
+:css
+  .post-content {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+  }
+
+  .comments {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+  }
+
+  .comment {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .comment:last-child {
+    border-bottom: none;
+  }
+
+  .comment-content {
+    margin: 0;
+    font-size: 1em;
+  }

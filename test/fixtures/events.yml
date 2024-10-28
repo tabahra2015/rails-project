@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  location: MyString
+  date: 2024-10-26 10:39:27
+  organizer: MyString
+
+two:
+  name: MyString
+  description: MyText
+  location: MyString
+  date: 2024-10-26 10:39:27
+  organizer: MyString

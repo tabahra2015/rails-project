@@ -1,0 +1,56 @@
+%h1= @event.name
+%p.event-description= @event.description
+
+%h2 Comments
+= link_to "Add Comment", new_event_comment_path(@event), class: "btn btn-primary"
+
+- if @event.comments.any?
+  .comments
+    - @event.comments.each do |comment|
+      .comment
+        %p.comment-content= comment.content
+- else
+  %p No comments yet.
+
+:css
+  .event-description {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+  }
+
+  .comments {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+  }
+
+  .comment {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .comment:last-child {
+    border-bottom: none;
+  }
+
+  .comment-content {
+    margin: 0;
+    font-size: 1em;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
