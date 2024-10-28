@@ -1,24 +1,27 @@
-# README
+Here’s a more concise breakdown:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. **Generate Models and Associations**:
+   Use the following commands to create three models:
 
-Things you may want to cover:
+   ```ruby
+   rails generate model Post title:string content:text
+   rails generate model Event name:string description:text
+   rails generate model Comment content:text commentable:references{polymorphic}
+   ```
 
-* Ruby version
+   - `Post` and `Event` represent different types of content.
+   - `Comment` has a polymorphic association (`commentable`) so it can belong to either `Post` or `Event`.
 
-* System dependencies
+2. **Run Migrations**:
+   Apply the database changes:
 
-* Configuration
+   ```ruby
+   rails db:migrate
+   ```
 
-* Database creation
+3. **Create Views**:
+   - For both `Post` and `Event`, create `new` and `show` views to allow users to add and view entries.
+   - For `Comment`, create a `new` view so users can add comments to posts or events.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+4. **Add CSS Styling**:
+   Add basic CSS to style the forms and display pages for a cohesive look across `Post`, `Event`, and `Comment` views.
