@@ -1,0 +1,63 @@
+<%= render 'header' %>
+
+<div class="container">
+  <!-- Section for the selected task -->
+  <%= link_to "Home", root_path, class: "nav-link" %>
+
+  <div class="row new-form">
+    <div class="row task-display">
+      <div class="col-lg-6">
+      </div>
+
+      <div class="col-lg-6 task-display-content">
+        <div class="task-header-content">
+        <p class="task-title h1"><%= @task.title %></p>
+          <p class="btn-task-edit"><%= link_to "Edit Task", edit_task_path(@task) %></p>
+        </div>
+
+        <div class="task-status-section">
+          <p><strong>Status:</strong> <%= @task.status.humanize %></p>
+        </div>
+
+        <div class="task-progress-section">
+          <p><strong>Progress:</strong> <%= @task.progress %>%</p>
+        </div>
+
+        <div class="task-project-section">
+          <p><strong>Project:</strong> <%= @task.project.name if @task.project.present? %></p>
+        </div>
+
+        <div class="task-description">
+          <p><strong>Description:</strong></p>
+          <p><%= @task.description %></p>
+        </div>
+
+        <div class="task-timestamps">
+          <p><strong>Created At:</strong> <%= @task.created_at.strftime("%B %d, %Y %H:%M") %></p>
+          <p><strong>Updated At:</strong> <%= @task.updated_at.strftime("%B %d, %Y %H:%M") %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section for listing all tasks -->
+  <div class="row mt-5">
+    <div class="col-12">
+      <h3>All Tasks</h3>
+      <ul class="list-group">
+        <% Task.all.each do |task| %>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <strong><%= link_to task.title, task_path(task) %></strong>
+              <p class="mb-1"><strong>Status:</strong> <%= task.status.humanize %></p>
+              <p class="mb-1"><strong>Progress:</strong> <%= task.progress %>%</p>
+              <p class="mb-1"><strong>Project:</strong> <%= task.project.name if task.project.present? %></p>
+              <p class="mb-0"><strong>Description:</strong> <%= truncate(task.description, length: 50) %></p>
+            </div>
+            <span class="badge bg-primary"><%= task.status.humanize %></span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

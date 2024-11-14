@@ -1,0 +1,11 @@
+<!-- app/views/tasks/index.html.erb -->
+<h1>All Tasks</h1>
+<ul class="list-group">
+
+
+  <% @tasks.each do |task| %>
+    <li class="list-group-item">
+      <%= link_to task.title, task_path(task) %>
+    </li>
+  <% end %>
+</ul>

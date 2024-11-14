@@ -1,0 +1,255 @@
+/* Reset and Basic Styles */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Style for the selected day */
+.selected {
+    background-color: #4CAF50; /* Green color for selected day */
+    color: white; /* White text */
+    border-radius: 50%; /* Rounded corners */
+  }
+  
+  /* Add styles for the selected day button (red button) */
+  button.selected {
+    background-color: red; /* Red background when selected */
+    color: white; /* White text color for contrast */
+  }
+  
+  /* Optional: Style for any button that is red but not selected */
+  button.red-button {
+    background-color: red;
+    color: white;
+  }
+  
+  /* Optional: Style for event buttons to visually indicate an event */
+  button.event {
+    background-color: lightgreen; /* Green for event days */
+  }
+  
+  /* Highlight the selected month button */
+  button.selected-month {
+    background-color: red; /* Red background for selected month */
+    color: white; /* White text color for contrast */
+  }
+  
+  /* Style for the selected month */
+  .selected-month {
+    background-color: #ff9800; /* Orange color for selected month */
+    color: white; /* White text */
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  /* Style for event days (highlighted) */
+  .event {
+    background-color: #f44336; /* Red color for event days */
+    color: white;
+    border-radius: 50%;
+  }
+  
+body {
+    margin: 20px;
+    background-color: #EEEDE9;
+    font-size: 96.5%;
+    font-family: Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: #FF462B;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.animate {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Calendar Layout */
+.calendar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 450px;
+    margin-top: -225px;
+    margin-left: -400px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.calendar h1, .calendar h2 {
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.calendar h1 span {
+    display: block;
+}
+
+/* Column Styles */
+.calendar .col {
+    float: left;
+    height: 100%;
+}
+
+.calendar .col .content {
+    padding: 40px;
+}
+
+.calendar .leftCol {
+    width: 40%;
+    background-color: #F48989;
+}
+
+.calendar .rightCol {
+    width: 60%;
+}
+
+/* Left Column */
+.calendar .leftCol h1 {
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.calendar .notes p,
+.calendar .notes input,
+.calendar .noteList li {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.calendar .notes p {
+    border-bottom: solid 1px rgba(255, 255, 255, 0.4);
+}
+
+.calendar .notes input {
+    background-color: #F48989;
+    color: #ffffff;
+    border: none;
+    width: 200px;
+}
+
+.calendar .months li button {
+    font-size: 15px;
+    color: #C7BEBE;
+    width: 32px;
+    margin-bottom: 20px;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: center;
+}
+
+.calendar .months li button.selected {
+    font-weight: bold;
+    color: #747978;
+}
+
+.calendar .addNote,
+.calendar .removeNote {
+    float: right;
+    font-weight: bold;
+    margin-left: 20px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 16px;
+}
+
+.calendar .addNote:hover,
+.calendar .removeNote:hover {
+    color: #ffffff;
+}
+
+/* Right Column */
+.calendar .rightCol h2 {
+    color: #C7BEBE;
+    text-align: right;
+    margin-bottom: 70px;
+}
+
+/* Month, Weekday, and Day Layout */
+.calendar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.calendar ul li {
+    display: inline-block;
+}
+
+.calendar .months li a,
+.calendar .weekday li a,
+.calendar .days li a {
+    display: block;
+    text-align: center;
+}
+
+.calendar .months li a {
+    font-size: 10px;
+    color: #C7BEBE;
+    width: 32px;
+    margin-bottom: 20px;
+}
+
+.calendar .months li .selected {
+    font-weight: bold;
+    color: #747978;
+}
+
+.calendar .weekday li a {
+    width: 55px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.calendar .days li {
+    width: 55px;
+}
+
+.calendar .days li a {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.calendar .days li a:hover {
+    background-color: #EEEDE9;
+}
+
+.calendar .days li .selected {
+    background-color: #F5A1A3 !important;
+    color: #ffffff;
+}
+
+.calendar .days li .event {
+    color: #F5A1A3;
+}
+
+/* Placeholder color */
+input::placeholder {
+    color: #ffffff;
+}

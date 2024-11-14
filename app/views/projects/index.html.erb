@@ -1,0 +1,51 @@
+<!-- In the main page view, such as app/views/projects/index.html.erb -->
+
+<div class="banner-container">
+  <div class="banner-nav-bar">
+    <div><h2></h2></div>
+    <div>
+   
+    <ul class="banner-ul">
+      <li><%= link_to "Home", root_path, class: "nav-link" %></li> 
+      <% if user_signed_in? %>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+
+    <% else %>
+      <%= link_to "Login", new_user_session_path %>
+      <%= link_to "Sign up", new_user_registration_path %>
+      <% end %>
+    </ul>
+    </div>
+  </div>
+  <div class="banner-info">
+    <div>
+      <p class="banner-title"><i class="fas fa-tasks"></i> PROJECT MANAGER</p>
+      <p class="banner-subtitle">Your Ultimate Project and Task Management Companion!</p>
+      <div class="btn-infos">
+        <p class="btn-add"><%= link_to "Add Project", new_project_path %></p> 
+
+        <p class="btn-more-info"><%= link_to "Add Task", new_task_path %></p>
+        <p class="btn-add"> <%= link_to "View All Tasks", tasks_path %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="row">
+  <% @projects.each do |project| %>
+    <div class="col-4 mb-4">
+      <div class="project-card-wrapper">
+        <div class="project-card border bg-light position-relative">
+          <%= link_to project_path(project), class: "text-decoration-none text-center d-block", style: "font-size: 40px; color: black;" do %>
+            <%= project.name %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div> <!-- Close the row -->
+
+<%= render 'footer' %>

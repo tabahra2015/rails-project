@@ -1,0 +1,24 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+
+        <h1 class="text-center">Create a new <strong>Task</strong>!</h1>
+        
+        <%= simple_form_for @task do |f| %>
+          <%= f.input :title, label: "Task Title" %>
+          <%= f.input :description, label: "Description" %>
+          
+          <!-- Enum status input -->
+          <%= f.input :status, as: :select, collection: Task.statuses.keys.map { |status| [status.humanize, status] }, label: "Status" %>
+
+          <!-- Project selection input -->
+          <%= f.input :project_id, as: :select, collection: Project.all.collect { |project| [project.name, project.id] }, prompt: "Select a Project", label: "Project" %>
+
+          <%= f.submit "Submit", class: "btn btn-success" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="banner" style="background-image: url('/images/back_new.jpg')">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md-6 offset-lg-3">
+        <div class="bg-white rounded p-3 shadow">
+          <h3>Create a new project</h3>
+          <%= simple_form_for @project do |f| %>
+            <%= f.input :name, placeholder: 'Enter project name' %>
+            <%= f.input :description, as: :text, placeholder: 'Enter project description' %>
+            
+            <!-- Manually create a datetime-local input -->
+            <div class="form-group">
+              <%= f.label :deadline, 'Project Deadline' %>
+              <%= f.datetime_local_field :deadline, class: 'form-control' %> <!-- Use standard datetime-local input -->
+            </div>
+            <div class="form-group">
+            <%= label_tag :user_input, 'Assign Users' %>
+            <%= text_area_tag :user_input, nil, placeholder: 'Enter user(s) details (e.g., username or email)', class: 'form-control' %>
+          </div>
+
+
+
+            <div class="text-center">
+              <%= f.submit 'Save', class: 'btn btn-success border mt-2 hover' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

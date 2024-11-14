@@ -1,0 +1,16 @@
+<%= simple_form_for @task do |f| %>
+  <%= f.input :title, label: "Task Title" %>
+  <%= f.input :description, label: "Description" %>
+  
+  <!-- Enum status input -->
+  <%= f.input :status, as: :select, collection: Task.statuses.keys.map { |status| [status.humanize, status] }, label: "Status" %>
+
+  <!-- Progress input: Show progress only if status is in progress -->
+  <%= f.input :progress, as: :range, min: 0, max: 7, label: "Progress", input_html: { 
+    step: 1, 
+    disabled: @task.status != 'in_progress' ? true : false, 
+    value: @task.progress 
+  } %>
+
+  <%= f.submit "Save Task", class: "btn btn-success" %>
+<% end %>

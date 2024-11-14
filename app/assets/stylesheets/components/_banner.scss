@@ -1,0 +1,139 @@
+
+.banner-container{
+  position: relative;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("/images/project_picture.jpg");
+  height: 40vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+
+  h1{
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+
+  ul{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li{
+    padding: 5px 20px;
+    margin: 0 20px;
+    list-style-type: none;
+  }
+
+  .banner-nav-bar{
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .fa-play{
+    margin-right: 10px;
+  }
+
+
+
+  .banner-info{
+    position: absolute;
+    margin-top: 10px;
+    padding: 50px;
+  }
+
+  .banner-title{
+    margin: 0;
+    font-size: 42px;
+    font-weight: 700;
+  }
+
+  .banner-subtitle{
+    font-weight: 300;
+    margin: 0 0 10px;
+    font-size: 28px;
+  }
+}
+
+
+
+.btn-sign{
+  width: 220;
+  background-color: #de2b5b;
+}
+
+.btn-infos{
+  width: 390px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-weight: bold;
+
+  .btn-add{
+    padding: 5px 20px;
+    width: 180px;
+    background-color: #de2b5b;
+  }
+
+  .btn-add a{
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .btn-more-info{
+    padding: 5px 20px;
+    width: 180px;
+    border: 1px solid #fff;
+  }
+
+  .btn-more-info a{
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+
+
+.movie-category{
+  text-align: center;
+  padding: 0 5px;
+  color: #fff;
+  margin-top: 20px;
+  width: 400px;
+  background-color: #de2b5b;
+  border-radius: 0 20px 20px 0;
+
+  .category-title{
+    padding: 10px;
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+
+
+.add-movie-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+@media (min-width: 100px) and (max-width: 790px) {
+  .banner h1 {
+    font-size: 180%;
+  }
+}
+
+.banner p {
+  font-size: 20px;
+  color: rgb(54, 49, 49);
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner-list h3 {
+  color: white;
+  text-align: center;
+  font-size: 400%;
+  font-weight: bold;
+}

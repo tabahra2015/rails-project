@@ -1,0 +1,13 @@
+<%= render 'header' %>
+
+  <div class="row new-form">
+    <!-- Left section: You can add any content or styling here -->
+    <div class="col-lg-6 left-bg-new">
+      <!-- Optional content or background styling for the left side -->
+    </div>
+
+    <!-- Right section: The form to create or edit a task -->
+    <div class="col-lg-6 right-bg">
+      <%= render 'form', task: @task %>
+    </div>
+  </div>

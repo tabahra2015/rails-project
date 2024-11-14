@@ -1,0 +1,221 @@
+/* Global Styles */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+  }
+  
+  /* Header Styling */
+  .header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Needed to position the New Message button */
+  }
+  
+  .page-title {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+  }
+  
+  .page-title a {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  /* New Message Button Styling */
+  .new-message-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .new-message-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Further styles for the message list and other sections... */
+  #main-nano-wrapper {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+  }
+  
+  
+  .message-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .message-list li {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .message-list li.unread {
+    border-left: 5px solid #007bff;
+  }
+  
+  .col-1 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox-wrapper {
+    margin-right: 10px;
+  }
+  
+  .title {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .star-toggle {
+    cursor: pointer;
+  }
+  
+  .col-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  
+  .subject {
+    font-weight: bold;
+  }
+  
+  .teaser {
+    color: #888;
+  }
+  
+  .date {
+    color: #888;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+  }
+  
+  .alert {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .tool-box {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .circle-icon {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .circle-icon:hover {
+    background-color: #ddd;
+  }
+  
+  .red-hover:hover {
+    background-color: #ffdddd;
+  }
+  
+  .glyphicon {
+    font-size: 16px;
+  }
+  
+  /* New Message Button - Top Right */
+  .new-message-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 18px;
+    }
+  
+    .message-list li {
+      flex-direction: column;
+    }
+  
+    .col-1, .col-2 {
+      flex: 1;
+    }
+  }
+  
